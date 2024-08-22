@@ -1,0 +1,38 @@
+
+Questions1:Find the course with the highest enrollment.
+ 
+	SELECT course_name 
+	FROM courses 
+	ORDER BY enrollment DESC 
+	LIMIT 1;
+
+
+
+Questions2:Calculate the average GPA of students in a specific department.
+Answer:
+	SELECT AVG(gpa) 
+	FROM students 
+	WHERE department_id = 'DEPT_ID';
+
+
+Questions3:Retrieve the minimum number of credits required to graduate.
+Answer:
+	SELECT MIN(required_credits) 
+	FROM graduation_requirements;
+
+
+Questions4:Find the faculty member teaching the most courses.
+Answer:
+	SELECT faculty_name 
+	FROM faculty_courses 
+	GROUP BY faculty_name 
+	ORDER BY COUNT(course_id) DESC 
+	LIMIT 1;
+
+
+Questions5:List the top 5 most popular extracurricular activities.
+Answer:
+	SELECT activity_name 
+	FROM extracurricular_activities 
+	ORDER BY participation_count DESC 
+	LIMIT 5;
